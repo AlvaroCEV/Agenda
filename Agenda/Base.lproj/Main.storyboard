@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ytn-1P-h0l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sZC-6Z-8IP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,24 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="oIc-aK-fmR">
-            <objects>
-                <tabBarController id="ytn-1P-h0l" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="WUy-8A-XBY"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3TD-SR-jy9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="sZC-6Z-8IP" kind="relationship" relationship="viewControllers" id="6ut-Sk-msG"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="egF-ow-x7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2533" y="-1034"/>
-        </scene>
         <!--Eventos-->
         <scene sceneID="oj8-Ed-eee">
             <objects>
@@ -62,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="-1036" y="-1017"/>
         </scene>
-        <!--Login View Controller-->
+        <!--login-->
         <scene sceneID="Rjc-qC-muR">
             <objects>
-                <viewController id="8Fh-Xy-wrS" customClass="LoginViewController" customModule="Agenda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="login" id="8Fh-Xy-wrS" customClass="LoginViewController" customModule="Agenda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U5j-MJ-aoo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,8 +58,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-WS-TQ3">
-                                <rect key="frame" x="58" y="175" width="112" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-WS-TQ3">
+                                <rect key="frame" x="58" y="175" width="80" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,8 +69,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF0-hR-9vY">
-                                <rect key="frame" x="58" y="363" width="106" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF0-hR-9vY">
+                                <rect key="frame" x="58" y="363" width="120" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,8 +140,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="6QJ-rQ-Axc"/>
                     <connections>
-                        <outlet property="Password" destination="HTR-cP-Ba4" id="dDN-fn-7oE"/>
-                        <outlet property="User" destination="0v9-7h-EIg" id="C5w-K8-hi9"/>
+                        <outlet property="PasswordLog" destination="HTR-cP-Ba4" id="7DV-Dr-6f5"/>
+                        <outlet property="UserLog" destination="0v9-7h-EIg" id="CRc-Aa-U76"/>
                         <segue destination="azx-8q-U2j" kind="presentation" identifier="CorrectUser" modalPresentationStyle="fullScreen" id="VRX-nB-wwA"/>
                     </connections>
                 </viewController>
@@ -181,14 +163,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnZ-LO-aHx">
-                                <rect key="frame" x="61" y="175" width="112" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnZ-LO-aHx">
+                                <rect key="frame" x="61" y="175" width="80" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-Ib-Igw">
-                                <rect key="frame" x="61" y="310" width="106" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-Ib-Igw">
+                                <rect key="frame" x="61" y="310" width="120" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -203,8 +185,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-Yi-q1X">
-                                <rect key="frame" x="61" y="445" width="194" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmar contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOs-Yi-q1X">
+                                <rect key="frame" x="61" y="445" width="224" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -252,12 +234,11 @@
                         <outlet property="ConfirmPassword" destination="mqQ-JK-fZv" id="Cz3-JV-IIB"/>
                         <outlet property="Password" destination="bmw-N8-sIO" id="bfn-aB-Rmk"/>
                         <outlet property="User" destination="XcM-Jb-e4H" id="HXl-6g-vgC"/>
-                        <segue destination="sZC-6Z-8IP" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="X4M-ro-CwE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRh-mD-kcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="-283"/>
+            <point key="canvasLocation" x="-1093" y="-286"/>
         </scene>
         <!--Event List View Controller-->
         <scene sceneID="xbL-fb-yze">
@@ -410,9 +391,6 @@
             <point key="canvasLocation" x="1838" y="356"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="X4M-ro-CwE"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

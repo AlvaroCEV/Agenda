@@ -5,13 +5,13 @@ import Foundation
 
 class LoginViewController: UIViewController{
     
-    @IBOutlet var User: UITextField!
-    @IBOutlet var Password: UITextField!
+    @IBOutlet var UserLog: UITextField!
+    @IBOutlet var PasswordLog: UITextField!
     
     
     
     @IBAction func Login(_ sender: Any) {
-        struct ResponseObject<T: Decodable>: Decodable {
+        struct ResponObject<T: Decodable>: Decodable {
             let form: T
         }
         
@@ -23,8 +23,8 @@ class LoginViewController: UIViewController{
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "POST"
         let postUsers: [String : Any] = [
-            "user" : User.text!,
-            "pass" : Password.text!
+            "user" : UserLog.text!,
+            "pass" : PasswordLog.text!
         ]
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: postUsers, options: .prettyPrinted)
@@ -51,7 +51,7 @@ class LoginViewController: UIViewController{
             // do whatever you want with the `data`, e.g.:
             
             do {
-                let responseObject = try JSONDecoder().decode(ResponseObject<Users>.self, from: data)
+                let responseObject = try JSONDecoder().decode(ResponObject<Users>.self, from: data)
                 print(responseObject)
             } catch {
                 print(error) // parsing error

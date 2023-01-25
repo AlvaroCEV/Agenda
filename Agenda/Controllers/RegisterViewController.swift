@@ -22,6 +22,8 @@ class RegisterViewController: UIViewController {
         
         if newPassword == confirmNewPassword {
             confirmPass = true
+        } else {
+            return
         }
         
         struct ResponseObject<T: Decodable>: Decodable {
@@ -62,10 +64,8 @@ class RegisterViewController: UIViewController {
             // do whatever you want with the `data`, e.g.:
             
             do {
-                if confirmPass == true {
-                    let responseObject = try JSONDecoder().decode(ResponseObject<Users>.self, from: data)
-                    print(responseObject)
-                }
+                let responseObject = try JSONDecoder().decode(ResponseObject<Users>.self, from: data)
+                print(responseObject)
             } catch {
                 print(error) // parsing error
                 
@@ -75,15 +75,12 @@ class RegisterViewController: UIViewController {
                     print("unable to parse response as string")
                 }
             }
+            DispatchQueue.main.async{
+                print("a")
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
-        
         task.resume()
-        if confirmPass == true {
-            performSegue(withIdentifier: "login", sender: sender)
-        }
     }
-    
-    
-    
     
 }
