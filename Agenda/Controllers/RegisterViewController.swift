@@ -76,7 +76,6 @@ class RegisterViewController: UIViewController {
                 }
             }
             DispatchQueue.main.async{
-                print("a")
                 self.navigationController?.popToRootViewController(animated: true)
             }
         }

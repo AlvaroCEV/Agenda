@@ -62,6 +62,9 @@ class CreateEventViewController: UIViewController {
                     print("unable to parse response as string")
                 }
             }
+            DispatchQueue.main.async{
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
         
         task.resume()
