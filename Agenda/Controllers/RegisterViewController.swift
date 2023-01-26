@@ -14,21 +14,10 @@ class RegisterViewController: UIViewController {
     
     @IBAction func Register(_ sender: Any) {
         
-        var confirmPass: Bool = false
         
         let newUser : String = User.text!
         let newPassword: String = Password.text!
         let confirmNewPassword: String = ConfirmPassword.text!
-        
-        if newPassword == confirmNewPassword {
-            confirmPass = true
-        } else {
-            return
-        }
-        
-        struct ResponseObject<T: Decodable>: Decodable {
-            let form: T
-        }
         
         let url = URL(string: "https://superapi.netlify.app/api/register")!
         var request = URLRequest(url: url)
@@ -39,6 +28,15 @@ class RegisterViewController: UIViewController {
             "user" : newUser,
             "pass" : newPassword
         ]
+        
+        if newPassword == confirmNewPassword {
+            
+                
+        struct ResponseObject<T: Decodable>: Decodable {
+            let form: T
+        }
+        
+        
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: postUser, options: .prettyPrinted)
         } catch let error {
@@ -80,6 +78,10 @@ class RegisterViewController: UIViewController {
             }
         }
         task.resume()
+        } else {
+            return
+        }
+
     }
     
 }
